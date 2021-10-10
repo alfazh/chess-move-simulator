@@ -4,13 +4,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.code.chesssim.board.ChessBoard;
-import com.code.chesssim.evaluator.EmptyBoardMoveEvaluatorImpl;
-import com.code.chesssim.evaluator.MoveEvaluator;
+import com.code.chesssim.datamappers.BoardDataMapper;
+import com.code.chesssim.datamappers.BoardDataMapperImpl;
+import com.code.chesssim.move.evaluator.EmptyBoardMoveEvaluatorImpl;
+import com.code.chesssim.move.evaluator.MoveEvaluator;
 import com.code.chesssim.move.generator.MoveGeneratorFactory;
 import com.code.chesssim.move.plan.MovementPlanFactory;
-import com.code.chesssim.util.BoardDataMapper;
-import com.code.chesssim.util.BoardDataMapperImpl;
 
+/**
+ * Spring configuration class defining beans used by application
+ * 
+ * @author Alf
+ *
+ */
 @Configuration
 public class ChessSimulatorConfiguration {
 

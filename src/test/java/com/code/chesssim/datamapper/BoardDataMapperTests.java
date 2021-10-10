@@ -1,4 +1,4 @@
-package com.code.chesssim.util;
+package com.code.chesssim.datamapper;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 
 import com.code.chesssim.board.BoardPosition;
 import com.code.chesssim.board.ChessSquare;
+import com.code.chesssim.datamappers.BoardDataMapper;
+import com.code.chesssim.datamappers.BoardDataMapperImpl;
 
 class BoardDataMapperTests {
 

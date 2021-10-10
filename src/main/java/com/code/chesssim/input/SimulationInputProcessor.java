@@ -1,4 +1,4 @@
-package com.code.chesssim.util;
+package com.code.chesssim.input;
 
 import java.util.EnumSet;
 import java.util.Optional;
@@ -9,8 +9,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.code.chesssim.board.ChessSquare;
+import com.code.chesssim.datamappers.BoardDataMapper;
 import com.code.chesssim.types.ChessPiece;
 
+/**
+ * Utility class for processing and validating CLI input
+ * 
+ * @author Alf
+ *
+ */
 public final class SimulationInputProcessor {
 
 	private static final EnumSet<ChessPiece> SUPPORTED_PIECE_SET = EnumSet.of(ChessPiece.KING, ChessPiece.QUEEN,
@@ -20,7 +27,7 @@ public final class SimulationInputProcessor {
 
 	private static final Logger logger = LoggerFactory.getLogger(SimulationInputProcessor.class);
 
-	private static final String USAGE = "Invalid input. Please provide 1 CLI argument in format <chess piece>,<position>. Eg. Pawn, A2. Supported pieces: Pawn, King, Queen.";
+	private static final String USAGE = "Invalid input. Please provide 1 CLI argument in format <chess piece>,<position>. Eg. Pawn,A2. Supported pieces: Pawn, King, Queen.";
 
 	public static Optional<SimulationInput> processInput(String[] args, BoardDataMapper boardDataMapper) {
 		if (args.length < 1) {

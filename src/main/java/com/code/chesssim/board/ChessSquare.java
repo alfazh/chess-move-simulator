@@ -6,7 +6,7 @@ package com.code.chesssim.board;
  * @author Alf
  *
  */
-public class ChessSquare {
+public final class ChessSquare {
 
 	private final String chessSquare;
 

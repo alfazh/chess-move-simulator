@@ -8,7 +8,7 @@ import java.util.Optional;
  * @author Alf
  *
  */
-public class ChessBoard {
+public final class ChessBoard {
 
 	private final int numRows;
 	private final int numCols;

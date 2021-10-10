@@ -1,4 +1,4 @@
-package com.code.chesssim.evaluator;
+package com.code.chesssim.move.evaluator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,12 @@ import com.code.chesssim.move.finder.MoveFinderFactory;
 import com.code.chesssim.move.generator.MoveGeneratorFactory;
 import com.code.chesssim.move.plan.PieceMovementPlan;
 
+/**
+ * This class evaluates possible moves for a piece on an empty chess board.
+ * 
+ * @author Alf
+ *
+ */
 public class EmptyBoardMoveEvaluatorImpl implements MoveEvaluator {
 
 	private MoveGeneratorFactory moveGeneratorFactory;

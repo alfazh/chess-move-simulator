@@ -7,7 +7,7 @@ package com.code.chesssim.board;
  * @author Alf
  *
  */
-public class BoardPosition {
+public final class BoardPosition {
 
 	private final int row;
 	private final int col;

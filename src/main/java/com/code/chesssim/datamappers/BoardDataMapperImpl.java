@@ -1,4 +1,4 @@
-package com.code.chesssim.util;
+package com.code.chesssim.datamappers;
 
 import java.util.Arrays;
 import java.util.Optional;

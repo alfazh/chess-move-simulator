@@ -1,4 +1,4 @@
-package com.code.chesssim.evaluator;
+package com.code.chesssim.move.evaluator;
 
 import java.util.List;
 
