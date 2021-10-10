@@ -32,7 +32,6 @@ public class BoardDataMapperImpl implements BoardDataMapper {
 		return Optional.of(new BoardPosition(row, col));
 	}
 
-	@Override
 	public Optional<ChessPiece> toChessPiece(String chessPiece) {
 		Optional<String> piece = Arrays.stream(ChessPiece.values()).map(p->p.toString()).filter(p->p.equalsIgnoreCase(chessPiece)).findFirst();
 		if(piece.isPresent()) {

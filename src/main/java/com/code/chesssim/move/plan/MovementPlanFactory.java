@@ -27,7 +27,6 @@ public class MovementPlanFactory {
 	
 	
 	public PieceMovementPlan getPieceMovementPlan(ChessPiece chessPiece) {
-		//TODO validate chessPiece
 		return movementPlanMap.get(chessPiece).get();
 	}
 
