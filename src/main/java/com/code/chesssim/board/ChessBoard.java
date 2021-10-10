@@ -16,8 +16,10 @@ public class ChessBoard {
 	public static final ChessBoard STANDARD = new ChessBoard(8, 8);
 
 	public ChessBoard(int numRows, int numCols) {
-		// TODO validate inputs
 		super();
+
+		if(numRows<4 || numCols<4) throw new IllegalArgumentException("Invalid board data");
+
 		this.numRows = numRows;
 		this.numCols = numCols;
 	}

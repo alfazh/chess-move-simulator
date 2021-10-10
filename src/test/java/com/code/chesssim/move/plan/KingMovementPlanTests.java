@@ -20,25 +20,25 @@ class KingMovementPlanTests {
 		PieceMovementPlan kingMovementPlan = new KingMovementPlan();
 		List<PossibleMove> possibleMoveList = kingMovementPlan.getPossibleMoves();
 		assertTrue(possibleMoveList.size()==8);
-		possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).anyMatch(m -> {
+		assertTrue(possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).anyMatch(m -> {
 			MultiStepMove sm = (MultiStepMove)m;
 			return sm.getAllowedMove().parallelStream().anyMatch(s -> s.equals(MoveStep.of(MoveDirection.DOWN, StepQuantum.ONE)));
-			});
+			}));
 		
-		possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).anyMatch(m -> {
+		assertTrue(possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).anyMatch(m -> {
 			MultiStepMove sm = (MultiStepMove)m;
 			return sm.getAllowedMove().parallelStream().anyMatch(s -> s.equals(MoveStep.of(MoveDirection.RIGHT, StepQuantum.ONE)));
-			});
+			}));
 		
-		possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).anyMatch(m -> {
+		assertTrue(possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).anyMatch(m -> {
 			MultiStepMove sm = (MultiStepMove)m;
 			return sm.getAllowedMove().parallelStream().anyMatch(s -> s.equals(MoveStep.of(MoveDirection.DIAGONAL_DOWN_RIGHT, StepQuantum.ONE)));
-			});
+			}));
 		
-		possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).anyMatch(m -> {
+		assertTrue(possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).anyMatch(m -> {
 			MultiStepMove sm = (MultiStepMove)m;
 			return sm.getAllowedMove().parallelStream().anyMatch(s -> s.equals(MoveStep.of(MoveDirection.DIAGONAL_UP_LEFT, StepQuantum.ONE)));
-			});
+			}));
 		
 	}
 	
@@ -47,10 +47,12 @@ class KingMovementPlanTests {
 		PieceMovementPlan kingMovementPlan = new KingMovementPlan();
 		List<PossibleMove> possibleMoveList = kingMovementPlan.getPossibleMoves();
 		assertTrue(possibleMoveList.size()==8);
-		possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).noneMatch(m -> {
+		assertTrue(
+				possibleMoveList.stream().filter(m -> m.getStepType().equals(StepType.VARIABLE_STEP)).findAny().isEmpty());
+		assertTrue(possibleMoveList.stream().filter(m->m.getStepType().equals(StepType.MULTI_STEP)).noneMatch(m -> {
 			MultiStepMove sm = (MultiStepMove)m;
-			return sm.getAllowedMove().parallelStream().noneMatch(s -> s.equals(MoveStep.of(MoveDirection.DOWN, StepQuantum.TWO)));
-			});
+			return sm.getAllowedMove().parallelStream().anyMatch(s -> s.equals(MoveStep.of(MoveDirection.DIAGONAL_DOWN_LEFT, StepQuantum.TWO)));
+			}));
 
 	}
 

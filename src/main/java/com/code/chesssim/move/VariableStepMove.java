@@ -1,5 +1,7 @@
 package com.code.chesssim.move;
 
+import com.code.chesssim.types.StepQuantum;
+
 /**
  * This immtable class defines a single step that has variable quantum. Each
  * move represents a final possible position
@@ -13,6 +15,10 @@ public final class VariableStepMove extends PossibleMove {
 
 	public VariableStepMove(MoveStep moveStep) {
 		super();
+		if(moveStep==null || !StepQuantum.VARIABLE_RANGE_BOUND.equals(moveStep.getStepQuantum())) {
+			throw new IllegalArgumentException("Variable move steps must have quantum "+StepQuantum.VARIABLE_RANGE_BOUND);
+		}
+		
 		this.moveStep = moveStep;
 	}
 

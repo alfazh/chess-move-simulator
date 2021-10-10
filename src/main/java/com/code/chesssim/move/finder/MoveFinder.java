@@ -1,4 +1,4 @@
-package com.code.chesssim.finder;
+package com.code.chesssim.move.finder;
 
 import java.util.List;
 
